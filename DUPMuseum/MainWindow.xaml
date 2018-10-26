@@ -1,12 +1,55 @@
-﻿<Window x:Class="DUPMuseum.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DUPMuseum"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+﻿<Controls:MetroWindow x:Class="DUPMuseum.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                      xmlns:local="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+                      mc:Ignorable="d"
+                      Title="Main Window" Height="550" Width="900"
+                       
+                       BorderBrush="Turquoise"
+                       BorderThickness="2"
+                       
+                       WindowStartupLocation="CenterScreen"
+                       >
+
+
     <Grid>
-        
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!--<Menu Grid.Row="0" VerticalAlignment="Top" Background="#c2c2c2">
+            <MenuItem Header="File" Background="#cccccc" BorderBrush="#000000">
+                <MenuItem Header="Open">
+                    <MenuItem Header="New File"></MenuItem>
+                    <MenuItem Header="Existing File"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Save"></MenuItem>
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+        </Menu>-->
+
+        <!--Menu area-->
+        <StackPanel Background="#aaa">
+            <DockPanel DockPanel.Dock="top" Margin="2.5">
+                <Button DockPanel.Dock="Left" Name="btnNav1" Content="Go to Split" Width="Auto" Click="btnNav1_Click"></Button>
+                <Button DockPanel.Dock="Right" Name="btnLogin" Content="Login" Click="btnLogin_Click"  HorizontalAlignment="Right"></Button>
+            </DockPanel>
+        </StackPanel>
+        <!--/Login Button-->
+        <!--/Menu Area-->
+
+
+        <!--Page Area-->
+        <local:Frame Grid.Row="3" Name="MainFrame" NavigationUIVisibility="Hidden" Margin="0 5 0 0"></local:Frame>
+
     </Grid>
-</Window>
+
+</Controls:MetroWindow>
